@@ -1,0 +1,113 @@
+.navbar {
+    background-color: $primaryColor;
+    color: $accentColor ;
+    // border-bottom: 2px solid #e6e6e6;
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 16px 10px;
+        text-transform: uppercase;
+        color: $accentColor;
+        margin: 0 10px;
+
+        &:hover, &.active {
+            background-color: $accentColor;
+            color: $primaryColor;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+.basic-weather {
+    padding: 32px 32px;
+    background-color: white;
+
+    .temp-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+
+        .tempreture {
+            display: flex;
+            align-items: center;
+            font-size: 32px;
+            width: 50%;
+
+            img {
+                height: 100px;
+                width: 100px;
+            }
+
+            span {
+                font-weight: bold;
+            }
+        }
+
+        .tempreture-feel {
+            width: 50%;
+            .temp-title {
+                font-size: 20px;
+            }
+            .temp-val {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .card-title {
+        text-transform: uppercase;
+    }
+
+    .card-value {
+        font-weight: 300;
+    }
+
+    .city-details {
+        display: flex;
+        gap: 32px;
+        padding-top: 32px;
+
+        .card-left, .card-right {
+            width: 50%;
+        }
+    }
+
+    .card-item {
+        padding: 12px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e6e6e6;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+.city-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .follow-wrapper {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+            height: 20px;
+            width: 20px;
+        }
+
+        span {
+            margin-left: 12px;
+        }
+    }
+}

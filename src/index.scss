@@ -1,0 +1,16 @@
+$primaryColor : #191970;
+$accentColor : #FFFAFA;
+// $accentColor : #FFF;
+
+$primaryFont: 'Nunito', sans-serif;
+$secondaryFont: 'Kaushan Script', cursive;
+
+body {
+  font-family: $primaryFont;
+  margin: 0;
+  background-color: #ebebeb;
+}
+
+@import "./component/comman.scss";
+@import "./pages/home/home.scss";
+@import "./pages/city/city.scss";
