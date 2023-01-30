@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import CurrentCityCard from '../../component/CurrentCityCard';
+import { ShimmerThumbnail } from 'react-shimmer-effects';
 import Header from '../../component/Header';
 import SearchBox from '../../component/SearchBox';
+import CityDetailCard from '../../component/CityDetailCard';
+import { useGetCurrentCityQuery } from '../../redux/api/currentLocation';
+import Errorpage from '../../component/Errorpage';
 
 const Homepage = () => {
   const [coords, setCoords] = useState(null);
+  const result = useGetCurrentCityQuery(coords);
 
   useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(function (position) {
-        setCoords({ latitude: position.coords.latitude, longitude: position.coords.longitude });
+      navigator.geolocation.getCurrentPosition(function (position) {
+        setCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
       });
     }
   }, []);
@@ -25,10 +29,16 @@ const Homepage = () => {
           </div>
 
           {navigator.geolocation && (
-            <div className="recent-wrapper">
-              <h5>Recent Locations</h5>
+            <div className="recent-wrapper spad">
+              <h5>Current Location</h5>
               <div className="recent-locations">
-                <CurrentCityCard data={coords} />
+                {result && result.isLoading ? (
+                  <ShimmerThumbnail height={150} width={200} rounded />
+                ) : result && result.isError ? (
+                  <Errorpage />
+                ) : (
+                  <CityDetailCard city={result.data.address.city.toLowerCase()} />
+                )}
               </div>
             </div>
           )}

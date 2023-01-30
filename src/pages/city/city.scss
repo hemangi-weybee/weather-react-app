@@ -1,27 +1,3 @@
-.navbar {
-    background-color: $primaryColor;
-    color: $accentColor ;
-    // border-bottom: 2px solid #e6e6e6;
-
-    a {
-        display: inline-block;
-        text-decoration: none;
-        padding: 16px 10px;
-        text-transform: uppercase;
-        color: $accentColor;
-        margin: 0 10px;
-
-        &:hover, &.active {
-            background-color: $accentColor;
-            color: $primaryColor;
-        }
-
-        &:first-child {
-            margin-left: 0;
-        }
-    }
-}
-
 .basic-weather {
     padding: 32px 32px;
     background-color: white;
@@ -52,6 +28,7 @@
             width: 50%;
             .temp-title {
                 font-size: 20px;
+                color: gray;
             }
             .temp-val {
                 font-size: 20px;
@@ -65,7 +42,8 @@
     }
 
     .card-value {
-        font-weight: 300;
+        // font-weight: 300;
+        color: gray;
     }
 
     .city-details {
@@ -95,6 +73,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: $primaryColor;
 
     .follow-wrapper {
         display: flex;
@@ -102,8 +81,8 @@
         cursor: pointer;
 
         img {
-            height: 20px;
-            width: 20px;
+            height: 30px;
+            width: 30px;
         }
 
         span {

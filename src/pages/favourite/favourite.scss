@@ -1,0 +1,48 @@
+.fav-page {
+    .fav-wrapper {
+        margin-top: 32px;
+        padding: 12px 32px;
+        background-color: white;
+
+        .fav-list {
+            width: 100%;
+            border-collapse: collapse;
+
+            thead {
+                color: $primaryColor;
+                border-bottom: 1px solid $primaryColor;
+                font-size: 18px;
+
+                tr th {
+                    padding: 12px 0px;
+                }
+            }
+
+            tbody {
+                font-size: 16px;
+                tr {
+                    border-bottom: 1px solid #e6e6e6;
+                    text-align: center;
+
+                    td {
+                        padding: 12px 0px;
+
+                        button {
+                            background: transparent;
+                            border: none;
+                            cursor: pointer;
+
+                            img {
+                                height: 24px;
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,17 +1,62 @@
-.header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 16px 0;
+.home-banner {
+    // height: 450px;
+    // background-color: $primaryColor;
+    // color: $accentColor;
+
+    // .logo, .header {
+    //     color: $accentColor;
+
+    //     #follow {
+    //         filter: invert(100%);
+    //     }
+    // }
+    .header-search {
+        display: none;
+    }
 }
 
-.home-banner {
-    height: 450px;
-    background-color: $primaryColor;
-    color: $accentColor;
+.recent-wrapper {
+    .recent-locations {
+        display: flex;
+        gap: 24px;
 
-    .logo {
-        color: $accentColor;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
     }
+}
 
+.current-city-card {
+    height: 150px;
+    width: 200px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px 5px #c2c2c2;
+
+    .city-name {
+        padding: 12px 12px 0 12px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .country-name {
+        padding: 0 12px;
+        color: gray;
+    }
+    .temp {
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+
+        span {
+            font-size: 26px;
+            font-weight: bold;
+        }
+    }
+    .real-temp {
+        padding: 0 12px 12px 12px;
+        font-size: 14px;
+        color: gray;
+    }
 }

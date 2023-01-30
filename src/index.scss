@@ -1,6 +1,5 @@
 $primaryColor : #191970;
 $accentColor : #FFFAFA;
-// $accentColor : #FFF;
 
 $primaryFont: 'Nunito', sans-serif;
 $secondaryFont: 'Kaushan Script', cursive;
@@ -14,3 +13,5 @@ body {
 @import "./component/comman.scss";
 @import "./pages/home/home.scss";
 @import "./pages/city/city.scss";
+@import "./pages/favourite/favourite.scss";
+@import "./pages/dailyWeather/dailyWeather.scss";
