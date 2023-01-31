@@ -1,7 +1,8 @@
 .daily-weather-card {
-    margin: 12px 0;
+    margin: 24px 0;
     padding: 12px;
     background-color: white;
+    box-shadow: 2px 2px 8px 2px #bcbcbc;
 
     .weather-heading {
         display: flex;
@@ -10,7 +11,6 @@
     }
 
     .day-date {
-        width: 20%;
         text-transform: uppercase;
 
         .day {
@@ -21,6 +21,10 @@
         .date {
             font-size: 14px;
             color: gray;
+        }
+
+        &.less-info {
+            width: 20%;
         }
     }
 
@@ -55,14 +59,18 @@
     padding: 0;
 
     .card-heading {
-        display: flex;
-        justify-content: space-between;
+        padding-left: 0;
+        padding-right: 0;
 
         .more-detail {
             img {
                 transform: rotate(180deg);
             }
         }
+    }
+
+    .card-content {
+        padding: 0;
     }
 
     .temp-wrapper {

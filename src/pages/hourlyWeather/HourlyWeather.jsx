@@ -10,7 +10,6 @@ import { useGetDaysWeatherQuery } from '../../redux/api/daysWeather';
 const HourlyWeather = () => {
   const { city } = useParams();
   const result = useGetDaysWeatherQuery({ city: city, day: 1 });
-  console.log(result.data, 'abc');
 
   return (
     <div className="citypage">

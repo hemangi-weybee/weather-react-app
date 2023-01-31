@@ -24,10 +24,10 @@ const DailyWeatherCard = ({ data }) => {
     <div className="daily-weather-card">
       {viewMore === false ? (
         <div className="weather-heading">
-          <div className="day-date">
+          <div className="day-date less-info">
             <div className="day">{days[date.getDay()]}</div>
             <div className="date">
-              {date.getDate()}/{date.getMonth() + 1}
+              {date.getDate()} {months[date.getMonth()]}
             </div>
           </div>
           <div className="temp-wrapper">

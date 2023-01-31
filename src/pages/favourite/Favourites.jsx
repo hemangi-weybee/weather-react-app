@@ -1,38 +1,102 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Errorpage from '../../component/Errorpage';
 import Header from '../../component/Header';
 import { removeCity } from '../../redux/slice/favouriteSlice';
 
 const Favourites = () => {
-  const favouriteCity = useSelector((state) => state.favouriteCity);
   const dispatch = useDispatch();
+  const ref = useRef();
+  const favouriteCity = useSelector((state) => state.favouriteCity);
+  const [filteredData, setFilteredData] = useState(favouriteCity);
+
+  const search = () => {
+    if (ref.current.value !== '') {
+      setFilteredData(
+        favouriteCity.filter((city) =>
+          city?.location?.name.toLowerCase().includes(ref.current.value)
+        )
+      );
+    } else {
+      setFilteredData(favouriteCity);
+    }
+  };
+
+  useEffect(() => {
+    search();
+  }, [favouriteCity]);
 
   return (
     <div className="fav-page">
       <Header />
       <div className="container">
-        <div className="fav-wrapper spad">
+        <div className="search-bar-wrapper spad">
+          <div className={`search-bar`}>
+            <input
+              name="search"
+              type="text"
+              placeholder="Search your City"
+              className="search-box"
+              onKeyUp={search}
+              ref={ref}
+            />
+            <button className="search-btn" id="search-btn" onClick={search}>
+              <img
+                src="/icons/search.svg"
+                id="search-btn"
+                alt="search-icon"
+                className="search-icon"
+              />
+            </button>
+          </div>
+        </div>
+        <div className="fav-wrapper">
           <table className="fav-list">
             <thead>
               <tr>
-                <th>City</th>
-                <th>State</th>
-                <th>Country</th>
-                <th>Date</th>
-                <th>Tempreature</th>
+                <th className="box">Location</th>
+                <th className="box">Date</th>
+                <th>
+                  <img src="icons/temp.svg" alt="Tempreature" />
+                  <div>Tempreature</div>
+                </th>
+                <th>
+                  <img src="icons/wind.svg" alt="Wind" />
+                  <div>Wind</div>
+                </th>
+                <th>
+                  <img src="icons/pressure.svg" alt="Pressure" />
+                  <div>Pressure</div>
+                </th>
+                <th>
+                  <img src="icons/humidity.svg" alt="Humidity" />
+                  <div>Humidity</div>
+                </th>
+                <th>
+                  <img src="icons/visibility.svg" alt="Visibility" />
+                  <div>Visibility</div>
+                </th>
+                <th>
+                  <img src="icons/uv.svg" alt="UV" />
+                  <div>UV</div>
+                </th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {favouriteCity.length ? (
-                favouriteCity.map((item) => (
+              {filteredData.length ? (
+                filteredData.map((item) => (
                   <tr key={item.location.name}>
-                    <td>{item.location.name}</td>
-                    <td>{item.location.region}</td>
-                    <td>{item.location.country}</td>
+                    <td>
+                      {item.location.name}, {item.location.country}
+                    </td>
                     <td>{item.location.localtime.split(' ')[0]}</td>
                     <td>{item.current.temp_c}&deg;c</td>
+                    <td>{item.current.wind_kph} km/h</td>
+                    <td>{item.current.pressure_mb} mb</td>
+                    <td>{item.current.humidity}%</td>
+                    <td>{item.current.vis_km} km</td>
+                    <td>{item.current.uv}</td>
                     <td>
                       <button onClick={() => dispatch(removeCity(item))}>
                         <img src="/icons/remove.svg" alt="Delete" />
@@ -42,7 +106,7 @@ const Favourites = () => {
                 ))
               ) : (
                 <tr>
-                  <td colSpan={6}>
+                  <td colSpan={9}>
                     <Errorpage error={'No city found'} />
                   </td>
                 </tr>

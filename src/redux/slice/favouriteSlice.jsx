@@ -10,7 +10,7 @@ export const favouriteSlice = createSlice({
   initialState,
   reducers: {
     addCity(state, action) {
-      const newState = [...state, action.payload];
+      const newState = [action.payload, ...state];
       localStorage.setItem('favouriteCity', JSON.stringify(newState));
       return newState;
     },

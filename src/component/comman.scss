@@ -1,7 +1,11 @@
 .container {
-    width: 100%;
+    // width: 100%;
     max-width: 960px;
     margin: auto;
+
+    @media screen and (max-width: 1024px) {
+        padding: 0 12px;
+    }
 }
 
 .spad {
@@ -22,7 +26,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 0;
+    margin: 16px 0;
+    height: 45px;
 
     .header {
         display: flex;
@@ -33,7 +38,7 @@
         font-size: 20px;
 
         #follow {
-            height: 24px;
+            height: 20px;
         }
     }
 
@@ -42,7 +47,15 @@
         align-items: center;
         justify-content: flex-end;
         gap: 24px;
-        width: 40%;
+        width: 50%;
+
+        .header-search {
+            width: 75%;
+
+            .search-error {
+                font-size: 12px;
+            }
+        }
     }
 
 }
@@ -51,15 +64,19 @@
     width: 100%;
     display: flex;
     align-items: center;
-    // border: 2px solid #e6e6e6;
+    border: 1px solid transparent;
     background-color: white;
     border-radius: 8px;
+
+    &.search-bar-error {
+        border: 1px solid red;
+    }
 
     .search-box {
         height: 45px;
         border: none;
         border-radius: 8px 0px 0px 8px;
-        padding-left: 12px;
+        padding: 0 12px;
         width: calc(100% - 50px);
 
         &:focus-visible {
@@ -74,6 +91,7 @@
         border: none;
         width: 50px;
         border-left: 1px solid #e6e6e6;
+        border-radius: 0px 8px 8px 0px;
 
         .search-icon {
             height: 20px;
@@ -89,45 +107,48 @@
 }
 
 .navbar {
-    background-color: $primaryColor;
-    color: $accentColor ;
-    // border-bottom: 2px solid #e6e6e6;
+    // background-color: $primaryColor;
+    // color: $accentColor ;+
+    display: flex;
 
     a {
         display: inline-block;
         text-decoration: none;
-        padding: 16px 10px;
+        padding: 16px 20px;
         text-transform: uppercase;
-        color: $accentColor;
-        margin: 0 10px;
+        border-bottom: 2px solid #e6e6e6;
+        color: gray;
+        span {
+            padding: 16px 0;
+        }
 
         &:hover, &.active {
-            background-color: $accentColor;
             color: $primaryColor;
+            span {
+                border-bottom: 2px solid $primaryColor;
+            }
+            // background-color: $accentColor;
+            // color: $primaryColor;
         }
 
         &:first-child {
-            margin-left: 0;
+            padding-left: 0;
         }
     }
 
-    .nav-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .search-wrapper {
-            width: 40%;
-        }
+    .filler {
+        flex-grow: 1;
+        border-bottom: 2px solid #e6e6e6;
     }
+
 }
 
 .error-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    color: red;
+    height: 200px;
+    color: gray;
 }
 .loader-wrapper {
     display: flex;

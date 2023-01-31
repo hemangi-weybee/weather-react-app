@@ -5,9 +5,7 @@ import { useGetCityWeatherQuery } from '../redux/api/cityWeather';
 import Errorpage from './Errorpage';
 
 const CityDetailCard = ({ city }) => {
-  console.log(city);
   const result = useGetCityWeatherQuery(city);
-  console.log(result.data, 'aa');
 
   return result.isLoading ? (
     <ShimmerThumbnail height={150} width={200} rounded />

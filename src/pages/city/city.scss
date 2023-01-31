@@ -1,6 +1,18 @@
 .basic-weather {
-    padding: 32px 32px;
     background-color: white;
+
+    .card-heading {
+        padding: 12px 32px;
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-size: 20px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .card-content {
+        padding: 0 32px 32px 32px;
+    }
 
     .temp-wrapper {
         display: flex;
@@ -39,6 +51,14 @@
 
     .card-title {
         text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        img {
+            height: 26px;
+            width: 26px;
+        }
     }
 
     .card-value {
@@ -89,4 +109,8 @@
             margin-left: 12px;
         }
     }
+}
+
+.aqi {
+    margin-top: 32px;
 }

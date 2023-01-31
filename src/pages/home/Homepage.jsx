@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { ShimmerThumbnail } from 'react-shimmer-effects';
+import { useSelector } from 'react-redux';
 import Header from '../../component/Header';
 import SearchBox from '../../component/SearchBox';
 import CityDetailCard from '../../component/CityDetailCard';
-import { useGetCurrentCityQuery } from '../../redux/api/currentLocation';
-import Errorpage from '../../component/Errorpage';
 
 const Homepage = () => {
   const [coords, setCoords] = useState(null);
-  const result = useGetCurrentCityQuery(coords);
+  const recentLocation = useSelector((state) => state.recentLocation);
 
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
-        setCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
+        setCoords(`${position.coords.latitude},${position.coords.longitude}`);
       });
     }
   }, []);
@@ -28,21 +26,25 @@ const Homepage = () => {
             <SearchBox />
           </div>
 
+          {/* <div className="locations-wrapper spad"> */}
           {navigator.geolocation && (
-            <div className="recent-wrapper spad">
-              <h5>Current Location</h5>
-              <div className="recent-locations">
-                {result && result.isLoading ? (
-                  <ShimmerThumbnail height={150} width={200} rounded />
-                ) : result && result.isError ? (
-                  <Errorpage />
-                ) : (
-                  <CityDetailCard city={result.data.address.city.toLowerCase()} />
-                )}
-              </div>
+            <div className="current-wrapper spad">
+              <div className="location-heading">Current Location</div>
+              <div className="recent-locations">{coords && <CityDetailCard city={coords} />}</div>
             </div>
           )}
+          {recentLocation.length ? (
+            <div className="recent-wrapper">
+              <div className="location-heading">Recent Location</div>
+              <div className="recent-locations">
+                {recentLocation.map((city, i) => (
+                  <CityDetailCard city={city} key={city + i} />
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
+        {/* </div> */}
       </div>
     </div>
   );

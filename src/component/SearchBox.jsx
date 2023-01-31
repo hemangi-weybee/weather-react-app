@@ -7,7 +7,6 @@ const SearchBox = () => {
   const [errorMsg, setErrorMsg] = useState(null);
 
   const search = (e) => {
-    console.log(e);
     const letters = /^[A-Za-z]+$/;
     if (ref.current.value.match(letters)) {
       setErrorMsg(null);
@@ -15,7 +14,6 @@ const SearchBox = () => {
     if (e.key === 'Enter' || e.target.id === 'search-btn') {
       if (ref.current.value) {
         if (ref.current.value.match(letters)) {
-          setErrorMsg(null);
           navigate(`/current/${ref.current.value.toLowerCase()}`);
         } else {
           setErrorMsg('City name can contain only letters');
@@ -28,11 +26,11 @@ const SearchBox = () => {
 
   return (
     <div className="search-bar-wrapper">
-      <div className="search-bar">
+      <div className={`search-bar ${errorMsg ? 'search-bar-error' : ''}`}>
         <input
           name="search"
           type="search"
-          placeholder="Search by City"
+          placeholder="Weather of City"
           ref={ref}
           className="search-box"
           onKeyDown={search}

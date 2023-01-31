@@ -1,6 +1,5 @@
 .fav-page {
     .fav-wrapper {
-        margin-top: 32px;
         padding: 12px 32px;
         background-color: white;
 
@@ -10,11 +9,31 @@
 
             thead {
                 color: $primaryColor;
-                border-bottom: 1px solid $primaryColor;
+                border-bottom: 2px solid gray;
                 font-size: 18px;
 
                 tr th {
                     padding: 12px 0px;
+                    width: 10%;
+
+                    div {
+                        font-size: 14px;
+                        font-weight: normal;
+                        color: gray;
+                    }
+
+                    &.box {
+                        width: 20%;
+                    }
+
+                    &:last-child {
+                        width: 5%;
+                    }
+
+                    img {
+                        height: 30px;
+                        width: 30px;
+                    }
                 }
             }
 

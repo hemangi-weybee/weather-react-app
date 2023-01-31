@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ city }) => {
   return (
-    <nav className="navbar">
-      <div className="container nav-wrapper">
-        <div>
-          <Link to={`/current/${city}`}>Today</Link>
-          <Link to={`/current/${city}/daily`}>Daily</Link>
-          <Link to={`/current/${city}/hourly`}>Hourly</Link>
-        </div>
-      </div>
+    <nav className="navbar container">
+      <Link to={`/current/${city}`}>
+        <span>Today</span>
+      </Link>
+      <Link to={`/current/${city}/daily`}>
+        <span>Daily</span>
+      </Link>
+      <Link to={`/current/${city}/hourly`}>
+        <span>Hourly</span>
+      </Link>
+      <div className="filler"></div>
     </nav>
   );
 };
