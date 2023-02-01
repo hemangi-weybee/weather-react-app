@@ -17,7 +17,6 @@ body {
 }
 
 .container {
-    // width: 100%;
     max-width: 960px;
     margin: auto;
 
@@ -152,8 +151,6 @@ body {
             span {
                 border-bottom: 2px solid $primaryColor;
             }
-            // background-color: $accentColor;
-            // color: $primaryColor;
         }
 
         &:first-child {
