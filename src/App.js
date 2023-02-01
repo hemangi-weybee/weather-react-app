@@ -6,7 +6,7 @@ import Citypage from './pages/city/Citypage';
 import DailyWeather from './pages/dailyWeather/DailyWeather';
 import Favourites from './pages/favourite/Favourites';
 import Homepage from './pages/home/Homepage';
-import HourlyWeather from './pages/hourlyWeather.jsx/HourlyWeather';
+import HourlyWeather from './pages/hourlyWeather/HourlyWeather';
 import { store } from './redux/store';
 
 const App = () => {

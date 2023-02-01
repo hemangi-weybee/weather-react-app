@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Header from '../../component/Header';
 import SearchBox from '../../component/SearchBox';
 import CityDetailCard from '../../component/CityDetailCard';
+import NewSearchBox from '../../component/NewSearchBox';
 
 const Homepage = () => {
   const [coords, setCoords] = useState(null);
@@ -23,10 +24,9 @@ const Homepage = () => {
 
         <div className="spad container">
           <div className="search">
-            <SearchBox />
+            <NewSearchBox />
           </div>
 
-          {/* <div className="locations-wrapper spad"> */}
           {navigator.geolocation && (
             <div className="current-wrapper spad">
               <div className="location-heading">Current Location</div>
@@ -44,7 +44,6 @@ const Homepage = () => {
             </div>
           ) : null}
         </div>
-        {/* </div> */}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchBox from './SearchBox';
+import NewSearchBox from './NewSearchBox';
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
         </Link>
         <div className="header-right">
           <div className="header-search">
-            <SearchBox />
+            <NewSearchBox />
           </div>
           <Link to={`/favourites`} className="header">
             <img src={`/icons/follow.svg`} id="follow"></img>Favorites

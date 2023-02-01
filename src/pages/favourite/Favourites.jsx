@@ -54,8 +54,14 @@ const Favourites = () => {
           <table className="fav-list">
             <thead>
               <tr>
-                <th className="box">Location</th>
-                <th className="box">Date</th>
+                <th>
+                  <img src="icons/location.svg" alt="Location" />
+                  <div>Location</div>
+                </th>
+                <th>
+                  <img src="icons/calendar.svg" alt="Saved on" />
+                  <div>Saved on</div>
+                </th>
                 <th>
                   <img src="icons/temp.svg" alt="Tempreature" />
                   <div>Tempreature</div>
