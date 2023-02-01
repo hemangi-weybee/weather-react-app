@@ -35,9 +35,11 @@ const NewSearchBox = () => {
           onChange={(selected, e) => {
             setSelectedOption(selected);
             if (e.action === 'select-option') {
+              setSelectedOption('');
               navigate(`/current/${selected.value}`);
             }
           }}
+          value={selectedOption}
           options={options}
           onInputChange={searchOption}
           isLoading={searchCity?.isLoading}
