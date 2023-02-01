@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Header from '../../component/Header';
-import SearchBox from '../../component/SearchBox';
 import CityDetailCard from '../../component/CityDetailCard';
 import NewSearchBox from '../../component/NewSearchBox';
 
@@ -27,7 +26,7 @@ const Homepage = () => {
             <NewSearchBox />
           </div>
 
-          {navigator.geolocation && (
+          {navigator.geolocation && coords && (
             <div className="current-wrapper spad">
               <div className="location-heading">Current Location</div>
               <div className="recent-locations">{coords && <CityDetailCard city={coords} />}</div>

@@ -18,6 +18,7 @@ const NewSearchBox = () => {
     if (inputValue.length >= 3 && inputValue.length <= 5) {
       setCall(false);
     } else if (inputValue.length < 3) {
+      setCall(true);
       setOptions([]);
     }
   };
