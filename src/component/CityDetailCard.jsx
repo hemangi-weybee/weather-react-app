@@ -12,7 +12,7 @@ const CityDetailCard = ({ city }) => {
   ) : result.isError ? (
     <Errorpage />
   ) : (
-    <Link to={`current/${result.data.location.name}`}>
+    <Link to={`current/${result.data.location.name.toLowerCase()}`}>
       <div className="current-city-card">
         <div className="city-name">{result.data.location.name}</div>
         <div className="country-name">{result.data.location.country}</div>
