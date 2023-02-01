@@ -13,12 +13,11 @@ const NewSearchBox = () => {
   const searchCity = useSearchCityQuery(city, { skip: call });
 
   const searchOption = (inputValue) => {
-    setErrorMsg(null);
+    errorMsg && setErrorMsg(null);
     setCity(inputValue);
     if (inputValue.length >= 3 && inputValue.length <= 5) {
       setCall(false);
     } else if (inputValue.length < 3) {
-      setCall(true);
       setOptions([]);
     }
   };
