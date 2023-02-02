@@ -8,7 +8,7 @@ const Header = () => {
       <div className="header-wrapper">
         <Link to={`/`} className="header">
           <img src="/icons/logo.svg" className="logo-icon" alt="Logo" />
-          <span className="logo">WatherApp</span>
+          <span className="logo">WeatherApp</span>
         </Link>
         <div className="header-right">
           <div className="header-search">
