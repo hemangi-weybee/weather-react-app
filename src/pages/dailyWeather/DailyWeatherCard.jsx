@@ -20,6 +20,8 @@ const DailyWeatherCard = ({ data }) => {
 
   const [viewMore, setViewMore] = useState(false);
 
+  console.log(data, 'aa');
+
   return (
     <div className="daily-weather-card">
       {viewMore === false ? (
@@ -63,13 +65,13 @@ const DailyWeatherCard = ({ data }) => {
                 <div>
                   <span className="temp-title">Minimum Tempreture </span>
                   <span className="temp-val">
-                    <span>{data.day.maxtemp_c}&deg;c</span>
+                    <span>{data.day.mintemp_c}&deg;c</span>
                   </span>
                 </div>
                 <div>
                   <span className="temp-title">Maximum Tempreture </span>
                   <span className="temp-val">
-                    <span>{data.day.mintemp_c}&deg;c</span>
+                    <span>{data.day.maxtemp_c}&deg;c</span>
                   </span>
                 </div>
               </div>
@@ -78,38 +80,76 @@ const DailyWeatherCard = ({ data }) => {
             <div className="city-details">
               <div className="card-left">
                 <div className="card-item">
-                  <div className="card-title">Weather</div>
+                  <div className="card-title">
+                    <img src="/icons/note.svg" />
+                    Weather
+                  </div>
                   <div className="card-value">{data.day.condition.text}</div>
                 </div>
                 <div className="card-item">
-                  <div className="card-title">Sunrise</div>
+                  <div className="card-title">
+                    <img src="/icons/sunrise.svg" />
+                    Sunrise
+                  </div>
                   <div className="card-value">{data.astro.sunrise}</div>
                 </div>
                 <div className="card-item">
-                  <div className="card-title">Visibility</div>
-                  <div className="card-value">{data.day.avgvis_km} km</div>
+                  <div className="card-title">
+                    <img src="/icons/humidity.svg" />
+                    Humidity
+                  </div>
+                  <div className="card-value">{data.day.avghumidity}%</div>
                 </div>
                 <div className="card-item">
-                  <div className="card-title">Chance of Rain</div>
+                  <div className="card-title">
+                    <img src="/icons/wind.svg" />
+                    Wind
+                  </div>
+                  <div className="card-value">{data.day.maxwind_kph} km/h</div>
+                </div>
+                <div className="card-item">
+                  <div className="card-title">
+                    <img src="/icons/rain.svg" />
+                    Probability Rain
+                  </div>
                   <div className="card-value">{data.day.daily_chance_of_rain}%</div>
                 </div>
               </div>
+
               <div className="card-right">
                 <div className="card-item">
-                  <div className="card-title">Humidity</div>
-                  <div className="card-value">{data.day.avghumidity}</div>
+                  <div className="card-title">
+                    <img src="/icons/visibility.svg" />
+                    Visibility
+                  </div>
+                  <div className="card-value">{data.day.avgvis_km} km</div>
                 </div>
                 <div className="card-item">
-                  <div className="card-title">Sunset</div>
+                  <div className="card-title">
+                    <img src="/icons/sunset.svg" />
+                    Sunset
+                  </div>
                   <div className="card-value">{data.astro.sunset}</div>
                 </div>
                 <div className="card-item">
-                  <div className="card-title">UV</div>
+                  <div className="card-title">
+                    <img src="/icons/uv.svg" />
+                    UV
+                  </div>
                   <div className="card-value">{data.day.uv}</div>
                 </div>
-
                 <div className="card-item">
-                  <div className="card-title">Chance of Snow</div>
+                  <div className="card-title">
+                    <img src="/icons/precipitation.svg" />
+                    Precipitation
+                  </div>
+                  <div className="card-value">{data.day.totalprecip_in} inch</div>
+                </div>
+                <div className="card-item">
+                  <div className="card-title">
+                    <img src="/icons/snow.svg" />
+                    Probability Snowfall
+                  </div>
                   <div className="card-value">{data.day.daily_chance_of_snow}%</div>
                 </div>
               </div>

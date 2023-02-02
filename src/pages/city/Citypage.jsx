@@ -9,10 +9,13 @@ import CityHeading from '../../component/CityHeading';
 import WeatherDetailCard from './WeatherDetailCard';
 import { useDispatch } from 'react-redux';
 import { addRecentLocation } from '../../redux/slice/recentLocationSlice';
+import { useGetDaysWeatherQuery } from '../../redux/api/daysWeather';
+import HourChart from './HourChart';
+import AstroDetailCard from './AstroDetailCard';
 
 const Citypage = () => {
   const { city } = useParams();
-  const result = useGetCityWeatherQuery(city);
+  const result = useGetDaysWeatherQuery({ city: city, day: 1 });
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +36,9 @@ const Citypage = () => {
       ) : (
         <div className="container">
           <CityHeading data={result.data} />
-          <WeatherDetailCard data={result.data} />
+          <WeatherDetailCard data={result.data.forecast.forecastday[0]} />
+          <HourChart data={result.data.forecast.forecastday[0].hour} />
+          <AstroDetailCard data={result.data.forecast.forecastday[0]} />
         </div>
       )}
     </div>

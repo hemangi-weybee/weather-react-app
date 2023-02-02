@@ -24,7 +24,7 @@ const HourlyWeather = () => {
         <div className="container">
           <CityHeading data={result.data} />
 
-          <h4>{result.data.forecast.forecastday[0].date}</h4>
+          <h2>{result.data.forecast.forecastday[0].date}</h2>
 
           {result.data.forecast.forecastday[0].hour
             .filter((data) => new Date(data.time).getHours() >= new Date(Date.now()).getHours())

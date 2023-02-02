@@ -113,3 +113,17 @@
 .aqi {
     margin-top: 32px;
 }
+
+.basic-weather.astro {
+    margin: 48px 0;
+
+    .city-details {
+        padding-top: 12px;
+    }
+}
+
+.basic-weather.chart {
+    margin-top: 48px;
+    padding: 12px 24px;
+
+}

@@ -25,13 +25,13 @@ const DailyWeather = () => {
         <div className="container">
           <CityHeading data={result.data} />
 
-          <h4>
+          <h2>
             {result.data.forecast.forecastday[0].date
               .concat(' to ')
               .concat(
                 result.data.forecast.forecastday[result.data.forecast.forecastday.length - 1].date
               )}
-          </h4>
+          </h2>
 
           {result.data.forecast.forecastday.map((item) => (
             <DailyWeatherCard data={item} key={item.date} />
