@@ -57,19 +57,19 @@ const DailyWeatherCard = ({ data }) => {
 
           <div className="card-content">
             <div className="temp-wrapper">
-              <div className="tempreture">
+              <div className="temperature">
                 <img src={data.day.condition.icon}></img>
                 <span>{data.day.avgtemp_c}&deg;c</span>
               </div>
-              <div className="tempreture-feel">
+              <div className="temperature-feel">
                 <div>
-                  <span className="temp-title">Minimum Tempreture </span>
+                  <span className="temp-title">Minimum temperature </span>
                   <span className="temp-val">
                     <span>{data.day.mintemp_c}&deg;c</span>
                   </span>
                 </div>
                 <div>
-                  <span className="temp-title">Maximum Tempreture </span>
+                  <span className="temp-title">Maximum temperature </span>
                   <span className="temp-val">
                     <span>{data.day.maxtemp_c}&deg;c</span>
                   </span>

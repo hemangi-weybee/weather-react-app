@@ -63,8 +63,8 @@ const Favourites = () => {
                   <div>Saved on</div>
                 </th>
                 <th>
-                  <img src="icons/temp.svg" alt="Tempreature" />
-                  <div>Tempreature</div>
+                  <img src="icons/temp.svg" alt="Temperature" />
+                  <div>Temperature</div>
                 </th>
                 <th>
                   <img src="icons/wind.svg" alt="Wind" />

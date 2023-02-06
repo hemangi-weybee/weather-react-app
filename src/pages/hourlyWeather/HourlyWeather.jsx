@@ -43,7 +43,7 @@ const HourlyWeather = () => {
                   <div className="hourly-item">
                     <img src="/icons/temp.svg"></img>
                     <div>{data.temp_c}&deg;c</div>
-                    <div className="item-title">Tempreature</div>
+                    <div className="item-title">Temperature</div>
                   </div>
                   <div className="hourly-item">
                     <img src="/icons/temp-feel.svg"></img>

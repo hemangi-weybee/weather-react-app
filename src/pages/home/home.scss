@@ -4,16 +4,10 @@
     }
 }
 
-.locations-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .recent-wrapper {
-        width: 70%;
-    }
-
+.recent-wrapper {
+    padding-top: 0;
 }
+
 .location-heading {
     font-size: 20px;
     padding: 12px 0;

@@ -5,7 +5,7 @@ const HourChart = ({ data }) => {
   const loadChartData = {
     series: [
       {
-        name: 'Tempreature (&deg;c)',
+        name: 'Temperature (&deg;c)',
         data: data.map((hour) => hour.temp_c)
       }
     ],
@@ -28,7 +28,7 @@ const HourChart = ({ data }) => {
         enabled: false
       },
       title: {
-        text: 'TEMPREATURE OF THE DAY',
+        text: 'TEMPERATURE OF THE DAY',
         align: 'left',
         style: {
           fontSize: '20px',

@@ -33,7 +33,7 @@ const Homepage = () => {
             </div>
           )}
           {recentLocation.length ? (
-            <div className="recent-wrapper">
+            <div className="recent-wrapper spad">
               <div className="location-heading">Recent Location</div>
               <div className="recent-locations">
                 {recentLocation.map((city, i) => (
